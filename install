@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 #
-# Installs and manages this Mac's config
+# Installs and manages this Mac's config. Use lk to access these functions:
+# cargo install lk
 
 . ./lib.sh
 
