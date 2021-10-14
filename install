@@ -1,0 +1,65 @@
+#!/usr/bin/bash
+#
+# Installs and manages this Mac's config
+
+. ./lib.sh
+
+# Installs and configures fzf
+fzf() {
+    banner "Installing fzf"
+    brew install fzf
+    $(brew --prefix)/opt/fzf/install --all
+}
+
+# Installs homebrew
+brew() {
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+# Installs stuff using brew.
+# Depends on homebrew being installed.
+all_brew() {
+    brew install deno
+    brew install docker-compose
+    brew install httpie
+    brew install tldr
+    brew install ag
+    brew install emacs-plus --with-modern-paper-icon
+    brew install coreutils
+    brew install neofetch
+}
+
+# Installs rust
+rust() {
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+# Installs stuff using cargo
+# Depends on rustup/rust/cargo being installed
+all_cargo() {
+    cargo install --force lk
+    cargo install tealdeer # tldr in rust
+    cargo install procs
+    cargo install du-dust
+    cargo install exa
+}
+
+# Creates or re-creates all symlinks to config.
+# E.g. ~/.zshrc -> ~/dev/personal/config_mac/dotfiles/.zshrc
+symlinks() {
+    cd "${HOME}"
+    echo -e "${GREEN}Creating symlinks to configs...${NC}"
+    _sym .zshrc
+    _sym .tmux.conf
+    _sym .vimrc
+}
+
+# Symlinks the file from the dotfiles dir into ~
+# Assumes the file in dotfiles and the file in ~ have the same name.
+_sym() {
+    config_file=$1
+    target="${DIR}/dotfiles/${config_file}"
+    link="${HOME}/${config_file}"
+    echo -e "${GREEN}  ${YELLOW}${link}${BLUE} -> ${YELLOW}${target}${NC}"
+    ln -sf "${target}" "${link}"
+}
