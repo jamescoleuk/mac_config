@@ -43,6 +43,8 @@ all_cargo() {
     cargo install procs
     cargo install du-dust
     cargo install exa
+    cargo install ytop
+    cargo install starship
 }
 
 # Creates or re-creates all symlinks to config.

@@ -24,3 +24,5 @@ alias twurl="/opt/homebrew/Cellar/tmuxinator/3.0.1/libexec/gems/twurl-0.9.6/bin/
 alias l="exa -la"
 alias ll="exa -l"
 
+# Starship is a shell prompt
+eval "$(starship init zsh)"
