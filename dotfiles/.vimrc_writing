@@ -1,0 +1,206 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'powerline/fonts'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'vim-scripts/groovyindent-unix'
+Plug 'reedes/vim-pencil'
+Plug 'vim-scripts/vim-colors-pencil'
+
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-expand-region'
+Plug 'airblade/vim-gitgutter'
+Plug 'plasticboy/vim-markdown'
+Plug 'nelstrom/vim-markdown-folding'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'tpope/vim-surround'
+
+
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'milkypostman/vim-togglelist'
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'micha/vim-colors-solarized'
+
+call plug#end()
+
+
+
+
+"set background=dark
+"colorscheme solarized
+"color dracula
+colorscheme pencil
+
+set encoding=UTF-8
+
+filetype plugin on
+
+" set up tab spacing
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" set tabstop=2
+" set softtabstop=0
+" set expandtab
+" set shiftwidth=2
+" set smarttab
+" set autoindent
+" set smartindent
+
+" autocmd FileType python setlocal nosmartindent
+
+" Stop vim-json or syntastic from setting the filetype of .template files to json                                                                                                                        
+" autocmd BufRead,BufNewFile *.template set filetype=text
+
+" Automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" Treat other file types as zip files
+" autocmd BufReadCmd *.jar,*.xpi,*.jar,*.xpi,*.apk,*.crx call zip#Browse(expand("<amatch>"))
+
+" Insert a newly generated UUID at the cursor position
+" command! Uuid execute "normal! i".system('uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n"')
+
+" searching
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+set title
+set nocompatible
+
+" keep 3 lines of context when scrolling
+" set scrolloff=3
+
+" set laststatus=2
+" set t_Co=256
+" set showmode
+" set showcmd
+" " Reduce delay waiting for a mapping/key code to complete
+" set timeoutlen=500
+" set ttimeoutlen=50
+
+" Tab completion in command mode like zsh
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" set wildmenu
+" "set wildmode=full
+" set wildmode=list:longest,list:full
+" set wildignore=.git,*.swp,*/tmp/*
+
+" Markdown specific settings
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Don't break lines on words in markdown
+" autocmd Filetype markdown setlocal linebreak
+
+" Specify languages to ssyntax highlight in markdown code blocks
+" let g:markdown_fenced_languages = ['css', 'javascript', 'js=javascript', 'json=javascript', 'xml', 'json', 'html', 'python', 'bash=sh', 'java']
+
+
+" Live life on the edge - don't create swap files
+" set noswapfile
+
+" if v:version > 703 || v:version == 703 && has("patch541")
+"     set formatoptions+=j " Delete comment character when joining commented lines
+" endif
+
+" Folding stuff
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" Enable folding but open all folds on open
+" set foldenable
+" set foldmethod=indent
+" if has("autocmd")
+"     au BufRead * normal zR
+" endif
+
+" autocmd Filetype gitcommit setlocal nofoldenable
+" autocmd Filetype markdown setlocal foldenable
+
+" " Set fold level                                                                                                                                                                  
+" nmap z0 :set foldlevel=0<CR>
+" nmap z1 :set foldlevel=1<CR>
+" nmap z2 :set foldlevel=2<CR>
+" nmap z3 :set foldlevel=3<CR>
+" nmap z4 :set foldlevel=4<CR>
+" nmap z5 :set foldlevel=5<CR>
+" nmap z6 :set foldlevel=6<CR>
+" nmap z7 :set foldlevel=7<CR>
+" nmap z8 :set foldlevel=8<CR>
+" nmap z9 :set foldlevel=9<CR>
+
+" Set the current working directory to that of the active file
+"autocmd BufEnter * silent! lcd %:p:h
+
+
+
+"
+"
+" vim-air-line
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:airline_powerline_fonts = 1
+
+" Don't count trailing whitespace since it lags in huge files
+"let g:airline#extensions#whitespace#enabled = 0
+
+" Put a buffer list at the top
+"let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamecollapse = 1
+"let g:airline#extensions#tabline#fnametruncate = 20
+"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+
+let g:airline_theme = 'papercolor'
+"let g:airline#extensions#hunks#enabled=0
+"let g:airline#extensions#branch#enabled=1
+"let g:airline_symbols.space = "\ua0"
+"
+"" Prefix the filename (%t) with the current working dir, max 30chars
+"let g:airline_section_c = '%-0.30{getcwd()}/%t'
+
+" Unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.whitespace = 'Ξ'
+"
+"" Airline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = ''
+
+
+
+
+
+" Start Pencil automatically for certain file types
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
+
+
+let g:airline_section_x = '%{PencilMode()}'

@@ -26,3 +26,8 @@ alias ll="exa -l"
 
 # Starship is a shell prompt
 eval "$(starship init zsh)"
+# direnv loads .envrc files from your current working directory
+eval "$(direnv hook zsh)"
+
+alias writing="code --user-data-dir ~/dev/personal/mac_config/vscode_profiles/writing/data"
+alias coding="code --user-data-dir ~/dev/personal/mac_config/vscode_profiles/coding/data"

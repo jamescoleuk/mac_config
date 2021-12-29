@@ -1,0 +1,30 @@
+# Couldn't get !don't ignore to work!
+**/globalStorage
+**/snippets
+**/workspaceStorage
+**/Backups
+**/blob_storage
+**/Cache
+**/CachedData
+**/Crashpad
+**/CachedExtensions
+**/CachedExtensionVSIXs
+**/Code\ Cache
+**/databases
+**/GPUCache
+**/Local\ Storage
+**/logs
+**/Service\ Worker
+**/Session\ Storage
+
+code.lock
+Cookies
+Cookies-journal
+Crashpad*
+languagepacks.json
+machineid
+Network\ Persistent\ State
+Preferences
+QuotaManager*
+storage.json
+TransportSecurity

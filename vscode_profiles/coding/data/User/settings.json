@@ -1,0 +1,180 @@
+{
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "journal.base": "/Users/james/icloud/Projects/journal",
+  "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.fontFamily": "MesloLGM Nerd Font",
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.validate": [
+      "typescript"
+  ],
+  "workbench.editor.showTabs": false,
+  "[dockerfile]": {
+      "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "editor.minimap.enabled": false,
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+      "editor.defaultFormatter": "matklad.rust-analyzer"
+  },
+  "rust-analyzer.diagnostics.disabled": [
+      "unresolved-import"
+  ],
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "journal.templates": [
+      {
+          "name": "memo",
+          "template": "- MEMO ${localTime}: ${input}"
+      },
+      {
+          "name": "task",
+          "template": "- [] ${d:LL} - Task: ${input}"
+      },
+      {
+          "name": "entry",
+          "template": "# ${d:dddd, MMMM DD YYYY}\n\n## First thing notes\n\n\n\n## EOD\n\n"
+      },
+      {
+          "name": "time",
+          "template": "${localTime}"
+      },
+      {
+          "name": "note",
+          "template": "# ${input}\n\n${tags}\n"
+      },
+      {
+          "name": "files",
+          "template": "- NOTE: [${title}](${link})"
+      }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+      {
+          "before": [
+              "j"
+          ],
+          "after": [
+              "g",
+              "j"
+          ]
+      },
+      {
+          "before": [
+              "k"
+          ],
+          "after": [
+              "g",
+              "k"
+          ]
+      }
+  ],
+  "vim.insertModeKeyBindings": [
+      {
+          "before": [
+              "j",
+              "j"
+          ],
+          "after": [
+              "<Esc>"
+          ]
+      }
+  ],
+  "json.schemas": [],
+  "editor.inlineSuggest.enabled": true,
+  "git.confirmSync": false,
+  "workbench.colorTheme": "Visual Studio Dark",
+  "editor.tokenColorCustomizations": {
+      "textMateRules": [
+          {
+              "scope": "text.html.markdown.journal.task.open.bullet",
+              "settings": {
+                  "foreground": "#CC3300"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.task.open.marker",
+              "settings": {
+                  "foreground": "#CC3300"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.task.open.keyword",
+              "settings": {
+                  "fontStyle": "italic"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.task.open.text",
+              "settings": {}
+          },
+          {
+              "scope": "text.html.markdown.journal.task.completed.keyword",
+              "settings": {
+                  "fontStyle": "italic"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.task.completed.marker",
+              "settings": {
+                  "foreground": "#AAAAAA"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.task.completed.text",
+              "settings": {
+                  "foreground": "#AAAAAA"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.task.completed.bullet",
+              "settings": {
+                  "foreground": "#CC3300"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.memo.keyword",
+              "settings": {
+                  "fontStyle": "italic"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.memo.bullet",
+              "settings": {
+                  "foreground": "#CC3300"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.scope",
+              "settings": {
+                  "foreground": "#CC3300"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.link.keyword",
+              "settings": {
+                  "fontStyle": "italic"
+              }
+          },
+          {
+              "scope": "text.html.markdown.journal.link.bullet",
+              "settings": {
+                  "foreground": "#CC3300"
+              }
+          }
+      ]
+  }
+}
