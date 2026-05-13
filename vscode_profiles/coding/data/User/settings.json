@@ -35,7 +35,7 @@
   "rust-analyzer.checkOnSave.command": "clippy",
   "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+  "workbench.iconTheme": "vscode-icons",
   "journal.templates": [
       {
           "name": "memo",
@@ -95,8 +95,7 @@
   ],
   "json.schemas": [],
   "editor.inlineSuggest.enabled": true,
-  "git.confirmSync": false,
-  "workbench.colorTheme": "Visual Studio Dark",
+"git.confirmSync": false,
   "editor.tokenColorCustomizations": {
       "textMateRules": [
           {
@@ -176,5 +175,8 @@
               }
           }
       ]
-  }
+},
+"[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+}
 }

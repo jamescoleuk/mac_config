@@ -1,9 +1,16 @@
 {
   "editor.tabSize": 2,
-  "editor.fontSize": 12,
-  "workbench.colorTheme": "Winter is Coming (Light)",
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Menlo",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 80,
+  "editor.renderIndentGuides": false,
   "editor.cursorBlinking": "solid",
-  "explorer.openEditors.visible": 0,
+  "editor.lineNumbers": "off",
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.quickSuggestions": false
+  },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -84,10 +91,44 @@
       }
     ]
   },
-  "json.schemas": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": [
+            "j"
+        ],
+        "after": [
+            "g",
+            "j"
+        ]
+    },
+    {
+        "before": [
+            "k"
+        ],
+        "after": [
+            "g",
+            "k"
+        ]
+    }
+],
+"vim.insertModeKeyBindings": [
+    {
+        "before": [
+            "j",
+            "j"
+        ],
+        "after": [
+            "<Esc>"
+        ]
+    }
+],
+  "workbench.editor.showTabs": false,
+  "workbench.colorTheme": "Default Light+",
+  "explorer.openEditors.visible": 0,
   "journal.base": "${homeDir}/iCloud/Projects/journal",
   "journal.locale": "en-UK",
   "journal.tpl-entry": "# ${weekday}, ${localDate}\n\n",
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "json.schemas": []
 }
 
